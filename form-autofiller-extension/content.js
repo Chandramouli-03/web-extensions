@@ -1,8 +1,7 @@
 const autofillFields = {
-    "company-name": {
+    "Company_Name": {
       "type": "input",
-      "defaultValue": "TechCorp Solutions",
-      "newName": "company-name"
+      "defaultValue": "TechCorp Solutions"
     },
     "company-industry": {
       "type": "input",
@@ -28,7 +27,7 @@ const autofillFields = {
       "type": "input",
       "defaultValue": "Senior Full Stack Developer"
     },
-    "number-of-openings": {
+    "No. of Openings": {
       "type": "input",
       "defaultValue": "5"
     },
@@ -48,17 +47,17 @@ const autofillFields = {
       "type": "ckeditor",
       "defaultValue": "• Immediate joiners preferred\n• Must be available for occasional travel\n• Willingness to work in different time zones\n• Strong communication skills required"
     },
-    "work-experience-min": {
+    "Min_experience": {
       "type": "input",
       "defaultValue": "5"
     },
-    "work-experience-max": {
+    "Max_Experience": {
       "type": "input",
       "defaultValue": "8"
     },
-    "job-type": {
+    "Nature_of_Job_Part_time_Internship": {
       "type": "select",
-      "defaultValue": "Full-time"
+      "defaultValue": "Full-time",
     },
     "Internship_Duration_In_Months": {
       "type": "input",
@@ -88,7 +87,7 @@ const autofillFields = {
       "type": "select",
       "defaultValue": ["JavaScript", "React", "Node.js", "MongoDB", "AWS"]
     },
-    "work-nature": {
+    "Type_of_job_WFH_WFO": {
       "type": "select",
       "defaultValue": "Hybrid"
     },
@@ -114,7 +113,7 @@ const autofillFields = {
     },
     "Product": {
       "type": "select",
-      "defaultValue": ["Web Development", "Cloud Services"]
+      "defaultValue": ["UI/UX", "DevOps"]
     },
     "POC_Name": {
       "type": "input",
@@ -130,7 +129,7 @@ const autofillFields = {
     },
     "Interview_stage_1": {
       "type": "select",
-      "defaultValue": "Online assessment"
+      "defaultValue": "Screening call",
     },
     "Interview_Stage_2": {
       "type": "select",
@@ -188,11 +187,11 @@ const autofillFields = {
   
   function fillForm() {
     for (const [name, field] of Object.entries(autofillFields)) {
-      const { type, defaultValue, newName } = field;
+      const { type, defaultValue } = field;
   
       switch (type) {
         case "input":
-          const input = document.querySelector(`[name="${newName || name}"]`);
+          const input = document.querySelector(`[name="${name}"]`);
           if (input) {
             input.value = defaultValue;
             input.dispatchEvent(new Event("input", { bubbles: true }));
